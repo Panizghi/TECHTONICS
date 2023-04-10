@@ -6,6 +6,9 @@ The repository contains the following files:
 -
 -
 -
+-
+-
+-
 
 STEAD Dataset
 The STEAD dataset is a global dataset of seismic signals that can be used for training AI models for earthquake detection. The dataset contains over 13,000 seismograms from 58 different earthquakes around the world. Each seismogram is a 3-component, 4-second waveform recorded by a seismograph station. The dataset is available for download: https://github.com/smousavi05/STEAD
