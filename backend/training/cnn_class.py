@@ -320,22 +320,22 @@ class SeismicCNN():
 
 
 
+if __name__ == '__main__':
 
+    model_cnn_c1 = SeismicCNN('classification','trace_category',12000,full_csv,dir) # initialize the class
+    model_cnn_c1.train_test_split(test_size=0.25,random_state=42) # train_test_split
+    model_cnn_c1.classification_cnn(80) # use the regression cnn method with 15 epochs with a target variable
+    model_cnn_c1.evaluate_classification_model() # evaluate the model
 
-model_cnn_c1 = SeismicCNN('classification','trace_category',12000,full_csv,dir) # initialize the class
-model_cnn_c1.train_test_split(test_size=0.25,random_state=42) # train_test_split
-model_cnn_c1.classification_cnn(80) # use the regression cnn method with 15 epochs with a target variable
-model_cnn_c1.evaluate_classification_model() # evaluate the model
+    model_cnn_rm = SeismicCNN('regression','source_magnitude',12000,full_csv,dir); # initialize the class
+    model_cnn_rm.train_test_split(test_size=0.25,random_state=42) # train_test_split
+    model_cnn_rm.regression_cnn('source_magnitude',80) # use the classification cnn method with 15 epochs
+    model_cnn_rm.evaluate_regression_model() # evaluate the model
 
-model_cnn_rm = SeismicCNN('regression','source_magnitude',12000,full_csv,dir); # initialize the class
-model_cnn_rm.train_test_split(test_size=0.25,random_state=42) # train_test_split
-model_cnn_rm.regression_cnn('source_magnitude',80) # use the classification cnn method with 15 epochs
-model_cnn_rm.evaluate_regression_model() # evaluate the model
-
-model_cnn_rp = SeismicCNN('regression','p_arrival_sample',12000,full_csv,dir); # initialize the class
-model_cnn_rp.train_test_split(test_size=0.25,random_state=42) # train_test_split
-model_cnn_rp.regression_cnn('p_arrival_sample',50) # use the classification cnn method with 15 epochs
-model_cnn_rp.evaluate_regression_model() # evaluate the model
+    model_cnn_rp = SeismicCNN('regression','p_arrival_sample',12000,full_csv,dir); # initialize the class
+    model_cnn_rp.train_test_split(test_size=0.25,random_state=42) # train_test_split
+    model_cnn_rp.regression_cnn('p_arrival_sample',50) # use the classification cnn method with 15 epochs
+    model_cnn_rp.evaluate_regression_model() # evaluate the model
 
 
 
